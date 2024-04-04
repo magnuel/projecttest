@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'https://dev-api.contender-logistics.draketechdev.ca/api';
-const CRUD_API_URL = 'https://api.crudcrud.com/api/16be57dbfcc04ed1ae78300551b3862d';
+const CRUD_API_URL = 'https://crudcrud.com/api/16be57dbfcc04ed1ae78300551b3862d';
 
 export const login = (body: { email: string; password: string }) => {
   return async (dispatch: any) => {
