@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_URL = 'https://dev-api.contender-logistics.draketechdev.ca/api';
-const CRUD_API_URL = 'https://crudcrud.com/api/16be57dbfcc04ed1ae78300551b3862d';
+const CRUD_API_URL = 'https://crudcrud.com/api/920ab6b34c354fb89eaee3529b061c1b';
 
 export const login = (body: { email: string; password: string }) => {
   return async (dispatch: any) => {
@@ -19,21 +19,17 @@ export const login = (body: { email: string; password: string }) => {
 };
 
 export const getTodos = () => {
-  const token = localStorage.getItem('token'); // Obtener token de acceso del localStorage
-  return axios.get(`${CRUD_API_URL}/todos`, { headers: { Authorization: `Bearer ${token}` } });
+  return axios.get(`${CRUD_API_URL}/todos`);
 };
 
 export const createTodo = (body: any) => {
-  const token = localStorage.getItem('token'); // Obtener token de acceso del localStorage
-  return axios.post(`${CRUD_API_URL}/todos`, body, { headers: { Authorization: `Bearer ${token}` } });
+  return axios.post(`${CRUD_API_URL}/todos`, body);
 };
 
 export const updateTodo = (id: string, body: any) => {
-  const token = localStorage.getItem('token'); // Obtener token de acceso del localStorage
-  return axios.put(`${CRUD_API_URL}/todos/${id}`, body, { headers: { Authorization: `Bearer ${token}` } });
+  return axios.put(`${CRUD_API_URL}/todos/${id}`, body);
 };
 
 export const deleteTodo = (id: string) => {
-  const token = localStorage.getItem('token'); // Obtener token de acceso del localStorage
-  return axios.delete(`${CRUD_API_URL}/todos/${id}`, { headers: { Authorization: `Bearer ${token}` } });
+  return axios.delete(`${CRUD_API_URL}/todos/${id}`);
 };
